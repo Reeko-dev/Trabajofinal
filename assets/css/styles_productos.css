@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('assets/imagen/man-woman-running-track-side-view-1024x683.jpg');
+    background-image: url('../imagen/man-woman-running-track-side-view-1024x683.jpg');
     margin: 0;
     background-size: 120em 60em;
 }
