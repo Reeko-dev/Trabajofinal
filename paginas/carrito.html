@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
 	<link rel="stylesheet" href="../assets/css/styles_carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
 </head>
 <body>
     <header>
@@ -14,13 +15,21 @@
                 <li><a href="../paginaprincipal.html">Inicio</a></li>
                 <li><a href="Productos.html">Productos</a></li>
                 <li><a href="quienes somos.html">Acerca de</a></li>
+                <li><a href="carrito.html">Carrito <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="Pagina contacto.html">Contacto</a></li>
             
             </ul>
         </nav>
     </header>
-    <div id="container">
-        <div id="product-list"></div>
-        <div id="cart"></div>
-    </div>
+    <h2>Productos en el Carrito</h2>
+    <section id="productos-carrito"> </section>
+    <div id="contador-carrito">Productos en el carrito: 0</div> 
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+    <footer>
+       
+            <p>Contacto: info@tiendadeportiva.com | Teléfono: (123) 456-7890</p>
+            <p>&copy; 2023 Tienda Deportiva. Todos los derechos reservados.</p>
+        
+    </footer>
 
     <script src="../assets/js/js_carrito.js"></script>

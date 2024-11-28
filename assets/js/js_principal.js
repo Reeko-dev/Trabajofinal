@@ -33,3 +33,25 @@ function showSlides() {
     slides[slideIndex].style.display = "block";  
     dots[slideIndex].className += " active";
 }
+
+function actualizarContador() {
+
+    let visitas = localStorage.getItem('contadorVisitas');
+
+    if (visitas === null) {
+        visitas = 0;
+    } else {
+        visitas = parseInt(visitas);
+    }
+
+    visitas++;
+
+    localStorage.setItem('contadorVisitas', visitas);
+
+    document.getElementById('contador').innerText = `Número de visitas: ${visitas}`;
+}
+
+actualizarContador();
+showSlides();
+
+

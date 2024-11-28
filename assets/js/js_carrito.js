@@ -1,52 +1,39 @@
-const products = [
-    { id: 1, name: 'Producto 1', price: 10, image: 'spidey' },
-    { id: 2, name: 'Producto 2', price: 20, image: 'https://via.placeholder.com/50' },
-    { id: 3, name: 'Producto 3', price: 30, image: 'https://via.placeholder.com/50' },
-];
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let productosCarrito = document.getElementById('productos-carrito');
+let contadorCarrito = document.getElementById('contador-carrito');
 
-let cart = [];
+function actualizarCarrito() {
+    productosCarrito.innerHTML = ''; 
+    contadorCarrito.innerHTML = `Productos en el carrito: ${carrito.length}`; 
 
-// Función para mostrar el listado de productos
-function showProducts() {
-    const productList = document.getElementById('product-list');
-    productList.innerHTML = '<h2>Productos Disponibles</h2>';
-    products.forEach(product => {
-        const productDiv = document.createElement('div');
-        productDiv.className = 'product';
-        productDiv.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <strong>${product.name}</strong> - $${product.price}
-            <button onclick="addToCart(${product.id})">Agregar al carrito</button>
-        `;
-        productList.appendChild(productDiv);
-    });
-}
-
-// Función para agregar productos al carrito
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    if (product && !cart.some(item => item.id === productId)) {
-        cart.push(product);
-        showCart();
+    if (carrito.length === 0) {
+        productosCarrito.innerHTML = '<p>No hay productos en el carrito.</p>';
     } else {
-        alert('Este producto ya está en el carrito.');
+        carrito.forEach((producto, index) => {
+            productosCarrito.innerHTML += `
+                <article class="articulo">
+                    <h3>${producto.nombre}</h3>
+                    <p>Precio: $${producto.precio}</p>
+                    <img src="${producto.imagen}" alt="${producto.nombre}" style="width:120px;height:120px;">
+                    <button class="elim" onclick="eliminarProducto(${index})">Eliminar</button>
+                </article>
+            `;
+        });
     }
 }
 
-// Función para mostrar el carrito
-function showCart() {
-    const cartDiv = document.getElementById('cart');
-    cartDiv.innerHTML = '<h2>Carrito</h2>';
-    let total = 0;
-    cart.forEach((item, index) => {
-        total += item.price;
-        const cartItemDiv = document.createElement('div');
-        cartItemDiv.className = 'cart-item';
-        cartItemDiv.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <strong>${item.name}</strong> - $${item.price}
-            <button onclick="removeFromCart(${index})">Eliminar</button>
-        `;
-        cartDiv.appendChild(cartItemDiv);
-    });
-    const totalDiv = document.createElement('div')};
+function eliminarProducto(index) {
+    carrito.splice(index, 1); 
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito(); 
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    localStorage.setItem('carrito', JSON.stringify(carrito)); 
+    actualizarCarrito(); 
+}
+
+document.getElementById('vaciar-carrito').addEventListener('click', vaciarCarrito);
+
+actualizarCarrito();

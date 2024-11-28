@@ -8,12 +8,13 @@ body {
 nav {
     background-color: #333;
     color: white;
-    padding:10px;
+    padding:40px;
+    padding-bottom: 10px;
+
 }
 
 nav ul {
     list-style-type: none;
-
 }   
 
 nav ul li {
@@ -24,6 +25,7 @@ nav ul li {
 nav a {
     color: white;
     text-decoration: none;
+    
 }
 
 .carousel {
@@ -57,6 +59,7 @@ footer {
     background-color: #f1f1f1;
     text-align: center;
     padding: 20px;
+    position:relative
 }
 .product-item{
     background-color: #959596;
@@ -65,7 +68,7 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 20px;
-    width: calc(33% - 40px); /* Ajusta el ancho según la cantidad de productos en una fila */
+    width: calc(33% - 40px); 
     box-sizing: border-box;
     text-align: center;
     transition: transform 0.2s;

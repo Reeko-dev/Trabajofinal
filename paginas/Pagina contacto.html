@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h4 {
+            text-align: center;
+        }
+        nav {
+             background-color: #333;
+            color: white;
+            padding:40px;
+            padding-bottom: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+
+        }   
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Contacto</h1>
+            <ul>
+                <li><a href="../paginaprincipal.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="quienes somos.html">Acerca de</a></li>
+                <li><a href="carrito.html">Carrito <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="Pagina contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+<h4>Llena este formulario si quieres que se te envie informacion de nuevos productos a tu correo</h4>
+
+<div class="contact-form">
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+
+       
+        console.log(`Nombre: ${name}, Correo: ${email}`);
+
+      
+        this.reset();
+        alert('Se le enviara informacion a el correo!');
+    });
+</script>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+    <p>Contacto: info@tiendadeportiva.com | Teléfono: (123) 456-7890</p>
+    <p>&copy; 2023 Tienda Deportiva. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
