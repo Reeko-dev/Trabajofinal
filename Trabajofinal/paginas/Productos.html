@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Productos</title>
+    <link rel="stylesheet" href="../assets/css/styles_productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <center><h1>PRODUCTOS</h1></center>
+            <ul>
+                <li><a href="../paginaprincipal.html">Inicio</a></li>
+                <li><a href="quienes somos.html">Acerca de</a></li>
+                <li><a href="carrito.html">Carrito <i class="fas fa-shopping-cart"></i></a></li>
+                <li><button id="toggleSidebar">Mostrar Filtros</button></li>
+            </ul>
+
+            <div class="sidebar" id="sidebar">
+                <h2>Filtros</h2>
+                <form id="searchForm">
+                    <label for="category">Categoría:</label>
+                    <select id="category" name="category">
+                        <option value="todos">Todos</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="calzado">Calzado</option>
+                        <option value="accesorios">Accesorios</option>
+                    </select>
+                    <br><br>
+                    <label for="price">Rango de Precio:</label><br>
+                    <input type="number" id="minPrice" name="minPrice" placeholder="Mínimo" step="0.01">
+                    <input type="number" id="maxPrice" name="maxPrice" placeholder="Máximo" step="0.01"><br>
+                    <button type="submit">Buscar</button>
+                    <button type="button" id="closeSidebar">Cerrar</button>
+                </form>
+            </div>
+            
+            <div class="overlay" id="overlay"></div>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Nuestros Productos</h2>
+        <section class="productos">
+            <article class="producto">
+                <img width="300" src="../assets\imagen\coleccion-ropa-deportiva-vector-iconos-cuadrados_18591-19997.avif" alt="Producto 1">
+                <h3>Ropa Deportiva Unisex</h3>
+                <p>Tanto para hombre como para mujer</p>
+                <p>Precio: $80.000</p>
+                <button onclick="agregarAlCarrito({ nombre: 'Ropa Deportiva Unisex', precio: 80000,
+                 imagen:'../assets/imagen/coleccion-ropa-deportiva-vector-iconos-cuadrados_18591-19997.avif'})">Añadir al carrito</button>
+            </article>
+
+            <article class="producto">
+                <img width="300" src="../assets/imagen/conjunto-coleccion-ropa-deportiva-fitness-out-fit-vista-frontal-posterior_195527-326.avif"
+                    alt="Producto 2">
+                <h3>Ropa Deportiva para Mujer</h3>
+                <p>Precio: $90.000</p>
+                <button onclick="agregarAlCarrito({ nombre: 'Ropa Deportiva para Mujer', precio: 90000, imagen:'../assets/imagen/conjunto-coleccion-ropa-deportiva-fitness-out-fit-vista-frontal-posterior_195527-326.avif' })">Añadir al carrito</button>
+            </article>
+
+            <article class="producto">
+                <img width="300" src="../assets/imagen/images.jfif" alt="Producto 3">
+                <h3>Shorts Deportivos</h3>
+                <p>Precio: $40.000</p>
+                <button onclick="agregarAlCarrito({ nombre: 'Shorts Deportivos', precio: 40000, imagen:'../assets/imagen/images.jfif' })">Añadir al carrito</button>
+            </article>
+
+                <article class="producto">
+                    <img width="300" src="../assets/imagen/Men-Size-Air-Cushion-Fashion-Sneakers-Brand-Sports-Shoes-Gym-Running-Shoes.avif"
+                        alt="Producto 4">
+                    <h3>Zapatos Deportivos</h3>
+                    <p>Para todo tipo de uso</p>
+                    <p>Precio: $100.000</p>
+                    <button onclick="agregarAlCarrito({ nombre: 'Zapatos Deportivos', precio: 100000, imagen:'../assets/imagen/Men-Size-Air-Cushion-Fashion-Sneakers-Brand-Sports-Shoes-Gym-Running-Shoes.avif' })">Añadir al carrito</button>
+                </article>
+
+                    <article class="producto">
+                        <img class="urla" width="300" src="../assets/imagen/gratis-png-ropa-deportiva-camiseta-ropa-deportiva-thumbnail.png" alt="Producto 5">
+                        <h3>Camisa para Ciclismo</h3>
+                        <p>Precio: $60.000</p>
+                        <button onclick="agregarAlCarrito({ nombre: 'Camisa para Ciclismo', precio: 60000, imagen:'../assets/imagen/gratis-png-ropa-deportiva-camiseta-ropa-deportiva-thumbnail.png' })">Añadir al carrito</button>
+                    </article>
+            </section>
+    </main>
+    <br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy;deportiva </p>
+        <p><a class="footer" href="politica-privacidad.html">Política de Privacidad</a></p>
+    </footer>
+</body>
+<script src="../assets/js/js_productos.js"></script>
+</html>

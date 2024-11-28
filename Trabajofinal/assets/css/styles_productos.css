@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../imagen/man-woman-running-track-side-view-1024x683.jpg');
+    margin: 0;
+    background-size: 120em 60em;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding:40px;
+    padding-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}   
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+header{
+    background-color: #333;
+    border:none
+}
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+button{
+    background-color: #57595d;
+    border: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+}
+button:hover{
+    background-color: #48709e;
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.productos{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+}
+.producto {
+    background: #747474;
+    border: 1px solid #181a1d;
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+.producto img {
+    max-width: 100%;
+    height: auto;
+}
+.producto h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+.producto p {
+    font-size: 1em;
+    color: #313131;
+}
+.producto .price {
+    font-size: 1.5em;
+    color: #2ecc71;
+    margin: 10px 0;
+}
+.producto button {
+    background-color: #454b4e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.producto button:hover {
+    background-color: #272729;
+}
+footer{
+    margin-top: 13em;
+    background-color: #797979;
+    border: 10px solid #262727;
+}
+.footer{
+text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    width: 300px;
+    height: 100%;
+    background-color: #7b7b7b;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 2;
+}
+.sidebar.active {
+    right: 0; 
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+}
+.overlay.active {
+    display: block;
+}
+.filter label {
+    display: block;
+    margin-top: 10px;
+}
+.filter input, .filter select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
